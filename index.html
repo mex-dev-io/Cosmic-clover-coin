@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Clover Coin ($CCC) - Universal Luck Talisman for 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+            background: #0a0a0f;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Cosmic Background */
+        .cosmic-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at top, #1a0f2e 0%, #0a0a0f 50%);
+            z-index: -2;
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* Header */
+        header {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 15, 0.7);
+            border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #10b981, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .clover-icon {
+            font-size: 32px;
+            filter: drop-shadow(0 0 10px #10b981);
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #10b981;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 5%;
+            position: relative;
+        }
+
+        .clover-3d {
+            width: 300px;
+            height: 300px;
+            animation: float 6s ease-in-out infinite, rotate 60s linear infinite;
+            filter: drop-shadow(0 0 60px #10b981) drop-shadow(0 0 100px rgba(16, 185, 129, 0.5));
+            margin-bottom: 30px;
+            border-radius: 50%;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        h1 {
+            font-size: 72px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #10b981, #fbbf24, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .tagline {
+            font-size: 28px;
+            color: #d1d5db;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.6);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid #10b981;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(16, 185, 129, 0.2);
+            transform: translateY(-3px);
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 5%;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 60px;
+            background: linear-gradient(135deg, #10b981, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Glass Cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            transition: all 0.3s;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2);
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        /* Tokenomics Grid */
+        .tokenomics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 900;
+            color: #10b981;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 18px;
+            color: #9ca3af;
+        }
+
+        /* How to Buy Steps */
+        .steps {
+            display: grid;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            color: #10b981;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        .step-content p {
+            color: #d1d5db;
+            line-height: 1.6;
+        }
+
+        /* Contract Address */
+        .contract-box {
+            background: rgba(16, 185, 129, 0.1);
+            border: 2px solid #10b981;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin: 40px 0;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .contract-box:hover {
+            background: rgba(16, 185, 129, 0.2);
+        }
+
+        .contract-label {
+            font-size: 14px;
+            color: #9ca3af;
+            margin-bottom: 10px;
+        }
+
+        .contract-address {
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            color: #10b981;
+            word-break: break-all;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(10, 10, 15, 0.9);
+            padding: 60px 5% 30px;
+            border-top: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: #10b981;
+            transform: translateY(-3px);
+        }
+
+        .disclaimer {
+            font-size: 12px;
+            color: #6b7280;
+            margin-top: 30px;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 42px; }
+            .tagline { font-size: 20px; }
+            .clover-3d { width: 200px; height: 200px; }
+            h2 { font-size: 36px; }
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="cosmic-bg"></div>
+    <div class="stars" id="stars"></div>
+
+    <header>
+        <div class="logo">
+            <span class="clover-icon">🍀</span>
+            <span>$CCC</span>
+        </div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#tokenomics">Tokenomics</a>
+            <a href="#how">How to Buy</a>
+            <a href="#community">Community</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img src="https://blue-imperial-crab-489.mypinata.cloud/ipfs/bafybeidigrkopk5hyzicj7s42kkrpq4fw5x26yghbnf2viumx7bsffchjm" alt="Cosmic Clover" class="clover-3d">
+        <h1>Cosmic Clover Coin</h1>
+        <p class="tagline">Hold the Clover. Attract Abundance.</p>
+        <div class="cta-buttons">
+            <a href="https://join.pump.fun/HSag/yz382ctf" class="btn btn-primary" target="_blank">Buy on Pump.fun</a>
+            <a href="https://twitter.com/Year_coin" class="btn btn-secondary" target="_blank">Join Community</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>Universal Luck Talisman for 2026</h2>
+            <div class="glass-card">
+                <p style="font-size: 20px; line-height: 1.8; color: #d1d5db; text-align: center;">
+                    The <strong style="color: #10b981;">Cosmic Clover</strong> transcends cultures and borders. A four-leaf talisman infused with cosmic energy, 
+                    $CCC represents universal luck, abundance, and the promise of prosperity in 2026. This isn't just another memecoin — 
+                    it's a community-driven movement built on <strong>transparency, fairness, and pure conviction</strong>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="tokenomics">
+        <div class="container">
+            <h2>Fair Launch Tokenomics</h2>
+            
+            <div class="contract-box" onclick="copyContract()">
+                <div class="contract-label">CONTRACT ADDRESS (Click to Copy)</div>
+                <div class="contract-address" id="contractAddress">FZqaQv9639gLUZSxJa2nhpkbJaRGHeDHubiabmypump</div>
+            </div>
+
+            <div class="tokenomics-grid">
+                <div class="glass-card stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Fair Launch</div>
+                    <p style="margin-top: 15px; color: #9ca3af;">Dev supply completely burned at launch</p>
+                </div>
+                <div class="glass-card stat-card">
+                    <div class="stat-number">0%</div>
+                    <div class="stat-label">Dev Tokens</div>
+                    <p style="margin-top: 15px; color: #9ca3af;">Creator is aligned through open market buys only</p>
+                </div>
+                <div class="glass-card stat-card">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Community Decides</div>
+                    <p style="margin-top: 15px; color: #9ca3af;">Burns, locks, treasury — all community-driven</p>
+                </div>
+            </div>
+
+            <div class="glass-card" style="margin-top: 40px;">
+                <h3 style="color: #10b981; margin-bottom: 20px; font-size: 28px;">Key Highlights</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 15px; border-left: 3px solid #10b981; margin-bottom: 15px; color: #d1d5db;">
+                        ✅ <strong>Launched:</strong> January 4, 2026 on Solana via Pump.fun
+                    </li>
+                    <li style="padding: 15px; border-left: 3px solid #10b981; margin-bottom: 15px; color: #d1d5db;">
+                        ✅ <strong>No Roadmap:</strong> No artificial promises, just organic growth
+                    </li>
+                    <li style="padding: 15px; border-left: 3px solid #10b981; margin-bottom: 15px; color: #d1d5db;">
+                        ✅ <strong>Transparency:</strong> 100% on-chain, verifiable on Solscan
+                    </li>
+                    <li style="padding: 15px; border-left: 3px solid #10b981; margin-bottom: 15px; color: #d1d5db;">
+                        ✅ <strong>X Only:</strong> No Telegram/Discord noise — pure signal
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="how">
+        <div class="container">
+            <h2>How to Buy $CCC</h2>
+            <div class="steps">
+                <div class="glass-card step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Get a Solana Wallet</h3>
+                        <p>Download Phantom, Solflare, or any Solana-compatible wallet. Fund it with SOL from an exchange like Coinbase or Binance.</p>
+                    </div>
+                </div>
+                <div class="glass-card step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Visit Pump.fun</h3>
+                        <p>Go to <a href="https://join.pump.fun/HSag/yz382ctf" target="_blank" style="color: #10b981;">join.pump.fun/HSag/yz382ctf</a> and connect your wallet.</p>
+                    </div>
+                </div>
+                <div class="glass-card step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Swap SOL for $CCC</h3>
+                        <p>Enter the amount of SOL you want to swap, confirm the transaction, and welcome your Cosmic Clover!</p>
+                    </div>
+                </div>
+                <div class="glass-card step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Hold & Attract Abundance</h3>
+                        <p>Join the community on X, share your journey, and let the cosmic luck flow. THIS IS YOUR YEAR! 🍀</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="community">
+        <div class="container">
+            <h2>Join the Cosmic Community</h2>
+            <div class="glass-card" style="text-align: center; padding: 60px 40px;">
+                <p style="font-size: 24px; margin-bottom: 40px; color: #d1d5db;">
+                    No Discord drama. No Telegram spam. Just pure <strong style="color: #10b981;">cosmic energy</strong> on X.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://twitter.com/Year_coin" class="btn btn-primary" target="_blank">Follow @Year_coin</a>
+                    <a href="https://twitter.com/i/communities/2007715557387141138" class="btn btn-secondary" target="_blank">Join X Community</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo" style="justify-content: center; margin-bottom: 20px;">
+                <span class="clover-icon">🍀</span>
+                <span>Cosmic Clover Coin</span>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://twitter.com/Year_coin" target="_blank">𝕏</a>
+                <a href="https://join.pump.fun/HSag/yz382ctf" target="_blank">🚀</a>
+            </div>
+
+            <p class="disclaimer">
+                <strong>Disclaimer:</strong> $CCC is a memecoin with no intrinsic value or expectation of financial return. 
+                This is a community-driven project for entertainment purposes only. Cryptocurrency investments are highly risky. 
+                Do your own research and never invest more than you can afford to lose. Not financial advice.
+            </p>
+
+            <p style="margin-top: 20px; color: #6b7280; font-size: 14px;">
+                © 2026 Cosmic Clover Coin. Community-owned, community-driven.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Generate stars
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.width = Math.random() * 3 + 'px';
+            star.style.height = star.style.width;
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
+        }
+
+        // Copy contract address
+        function copyContract() {
+            const contractText = document.getElementById('contractAddress').textContent;
+            navigator.clipboard.writeText(contractText).then(() => {
+                alert('Contract address copied! 🍀');
+            });
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
