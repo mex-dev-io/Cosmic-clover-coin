@@ -106,6 +106,55 @@
             color: #10b981;
         }
 
+        .btn-header {
+            padding: 10px 24px;
+            font-size: 15px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+            white-space: nowrap;
+        }
+
+        .btn-header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+        }
+
+        /* Google Translate Styling */
+        #google_translate_element {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 5px 10px;
+        }
+
+        .goog-te-combo {
+            background: rgba(10, 10, 15, 0.9);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .goog-te-combo:hover {
+            border-color: #10b981;
+        }
+
+        /* Hide Google Translate Banner */
+        .goog-te-banner-frame {
+            display: none !important;
+        }
+
+        body {
+            top: 0 !important;
+        }
+
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -122,9 +171,8 @@
             width: 300px;
             height: 300px;
             animation: float 6s ease-in-out infinite, rotate 60s linear infinite;
-            filter: drop-shadow(0 0 60px #10b981) drop-shadow(0 0 100px rgba(16, 185, 129, 0.5));
+            filter: drop-shadow(0 0 40px rgba(16, 185, 129, 0.8)) drop-shadow(0 0 80px rgba(16, 185, 129, 0.4));
             margin-bottom: 30px;
-            border-radius: 50%;
         }
 
         @keyframes float {
@@ -458,10 +506,15 @@
             .clover-3d { width: 200px; height: 200px; }
             h2 { font-size: 36px; }
             nav { display: none; }
+            .btn-header { 
+                padding: 8px 16px; 
+                font-size: 13px; 
+            }
             .step { flex-direction: column; }
             .chart-container iframe { height: 400px; }
             .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
             .stat-live-value { font-size: 24px; }
+            .twitter-timeline { height: 500px !important; }
         }
     </style>
 </head>
@@ -474,13 +527,19 @@
             <span class="clover-icon">🍀</span>
             <span>$CCC</span>
         </div>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#tokenomics">Tokenomics</a>
-            <a href="#chart">Chart</a>
-            <a href="#how">How to Buy</a>
-            <a href="#community">Community</a>
-        </nav>
+        <div style="display: flex; align-items: center; gap: 30px;">
+            <nav>
+                <a href="#about">About</a>
+                <a href="#tokenomics">Tokenomics</a>
+                <a href="#chart">Chart</a>
+                <a href="#how">How to Buy</a>
+                <a href="#community">Community</a>
+            </nav>
+            <div id="google_translate_element" style="display: inline-block;"></div>
+            <a href="https://twitter.com/Year_coin" class="btn-header" target="_blank" rel="noopener">
+                Join Community 𝕏
+            </a>
+        </div>
     </header>
 
     <section class="hero">
@@ -652,6 +711,21 @@
     <section id="community">
         <div class="container">
             <h2>Join the Cosmic Community</h2>
+            
+            <!-- X Community Feed -->
+            <div class="glass-card" style="margin-bottom: 40px;">
+                <h3 style="color: #10b981; margin-bottom: 30px; font-size: 28px; text-align: center;">Community Posts</h3>
+                <div style="max-width: 600px; margin: 0 auto;">
+                    <a class="twitter-timeline" 
+                       data-height="600" 
+                       data-theme="dark" 
+                       data-chrome="noheader nofooter noborders transparent"
+                       href="https://twitter.com/search?q=%23CosmicCloverCoin%20OR%20%24CCC%20OR%20from%3AYear_coin&src=typed_query&f=live">
+                        Loading community posts...
+                    </a>
+                </div>
+            </div>
+
             <div class="glass-card" style="text-align: center; padding: 60px 40px;">
                 <p style="font-size: 24px; margin-bottom: 40px; color: #d1d5db;">
                     No Discord drama. No Telegram spam. Just pure <strong style="color: #10b981;">cosmic energy</strong> on X.
@@ -789,5 +863,21 @@
             });
         });
     </script>
+    
+    <!-- Twitter Widget Script -->
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'es,pt,fr,de,it,ja,ko,zh-CN,zh-TW,ru,ar,hi,tr,vi,id,th',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
